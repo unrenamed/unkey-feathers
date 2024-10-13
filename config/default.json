@@ -1,0 +1,38 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "./public/",
+  "origins": [
+    "http://localhost:3030"
+  ],
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "sqlite": {
+    "client": "sqlite3",
+    "connection": "unkey-feathers-chat.sqlite",
+    "useNullAsDefault": true
+  },
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "TtO64u9s4YwsHR0Z4yqRACFQ2/kq+T/D",
+    "authStrategies": ["apiKey", "jwt", "local"],
+    "apiKey": {
+      "header": "x-api-key"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    }
+  }
+}
