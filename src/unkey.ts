@@ -27,9 +27,6 @@ export const createApiKey = async () => {
 }
 
 export const verifyApiKey = async (key: string) => {
-  const nextWeek = new Date()
-  nextWeek.setDate(new Date().getDate() + 7)
-
   const verified = await verifyKey({
     apiId: process.env.UNKEY_API_ID!,
     key
